@@ -1,0 +1,59 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 5px solid #8cbf84;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loader {
+  align-items: center;
+  background: rgb(23, 22, 22);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  opacity: 0.6;
+  top: 0;
+  transition: all 0.3s linear;
+  width: 100%;
+  z-index: 9999;
+}
+
+.header {
+  display: flex;
+  width: 93%;
+  justify-content: center;
+  justify-items: center;
+  padding: 1rem;
+}
+
+.header img {
+  flex: 1;
+  margin-left: 6rem;
+}
+
+.header select {
+  width: 6rem;
+}
+
+.coin-table {
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+.footer {
+  padding-top: 0.5rem;
+}
+
+.lastUpdate {
+  color: rgb(146, 146, 146);
+  font-style: italic;
+  font-size: 0.7rem;
+}
+
+.refereshCounter {
+  font-size: 0.9rem;
+}
