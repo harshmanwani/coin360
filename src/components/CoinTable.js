@@ -70,6 +70,7 @@ const CoinTable = ({ dataset }) => {
 
   return (
     <div className="coin-table">
+      {/* Using React-window to render the table because its a large dataset and this generates a virtualized grid hence the performance is better :) */}
       <Grid
         columnCount={dataset.length + 1}
         columnWidth={100}
