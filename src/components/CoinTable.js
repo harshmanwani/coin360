@@ -7,11 +7,11 @@ const CoinTable = ({ dataset }) => {
     const coinX = dataset[columnIndex - 1];
     const coinY = dataset[rowIndex - 1];
     if (coinX["p"] === coinY["p"]) {
-      return <div style={defaultCellStyle}>
+      return <div style={defaultCellStyle} title={`${coinX["s"]}/${coinY["s"]}`}>
         -
       </div>
     };
-    
+
     // There definitely can be other better ways to calculate this or can be done easily with mathjs kinda library.
     // But I'm just approaching it straight simple right now. Can be improved if given more time to it.
 
@@ -36,6 +36,7 @@ const CoinTable = ({ dataset }) => {
           ? `rgba(124,193,130,${Math.abs(changeinPercent / 10)})`
           : `rgba(202,64,64,${Math.abs(changeinPercent / 10)})`,
       }}
+      title={`${coinX["s"]}/${coinY["s"]}`}
     >
       {`${Number(changeinPercent).toFixed(2)}%`};
     </div>
