@@ -1,17 +1,19 @@
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
 import { useCallback, useEffect, useReducer, useState } from "react";
 import axios from 'axios';
 
-import * as actionTypes from './store/actionTypes';
-import { appReducer, initState } from "./store/reducer";
-import { GET_COINS } from "./API";
+import * as actionTypes from "../store/actionTypes";
+import { appReducer, initState } from "../store/reducer";
+import { GET_COINS } from "../utils/API";
 
-import './app.css'
-import Header from "./components/Header";
-import CoinTable from "./components/CoinTable";
-import Footer from "./components/Footer";
-import Loader from "./components/Loader";
+import Header from "../components/Header";
+import CoinTable from "../components/CoinTable";
+import Footer from "../components/Footer";
+import Loader from "../components/Loader";
 
-function App() {
+
+export default function Home() {
 
   const [isLoading, setLoading] = useState(false);
 
@@ -61,8 +63,15 @@ function App() {
   }, [interval, fetchData])
 
   return (
-    <div className="App">
+    <div className={styles.main}>
+      <Head>
+        <title>Coin360</title>
+        <meta name="description" content="Coin 360 application to compare cryptocurrency prices" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {isLoading && <Loader />}
+      
       <Header
         interval={interval}
         setDataInterval={setDataInterval}
@@ -75,7 +84,5 @@ function App() {
         refereshData={fetchData}
       />
     </div>
-  );
+  )
 }
-
-export default App;

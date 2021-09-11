@@ -1,7 +1,10 @@
 import React from 'react';
 import { FixedSizeGrid as Grid } from 'react-window';
+import useWindowDimensions from '../utils/useWindowDimension';
 
 const CoinTable = ({ dataset }) => {
+
+  const { width, height } = useWindowDimensions();
 
   const getPriceChange = (rowIndex, columnIndex, defaultCellStyle) => {
     const coinX = dataset[columnIndex - 1];
@@ -76,8 +79,8 @@ const CoinTable = ({ dataset }) => {
         columnWidth={100}
         rowCount={dataset.length + 1}
         rowHeight={50}
-        width={window.innerWidth - 100}
-        height={window.innerHeight - 125}
+        width={width - 100}
+        height={height - 125}
       >
         {Cell}
       </Grid>
